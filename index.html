@@ -19,15 +19,15 @@
 			<div class="login-page">
 				<div class="form">
 					<form class="register-form" action="home.html">
-						<input id="namereg" type="text" placeholder="name"/>
-						<input id="passreg" type="password" placeholder="password"/>
-						<input id="emailreg" type="text" placeholder="email address"/>
+						<input id="namereg" type="text" placeholder="name" pattern=".{3,}" maxlength="20"/>
+						<input id="passreg" type="password" placeholder="password" pattern=".{3,}" maxlength="20"/>
+						<input id="emailreg" type="text" placeholder="email address" pattern=".{3,}" maxlength="254"/>
 						<button type="button" onclick="submitRegister()">create</button>
 						<p class="message">Already registered? <a href="#">Sign In</a></p>
 					</form>
 					<form class="login-form" action="home.html">
-						<input id="email" type="text" placeholder="email address"/>
-						<input id="pass" type="password" placeholder="password"/>
+						<input id="email" type="text" placeholder="email address" pattern=".{3,}" maxlength="254"/>
+						<input id="pass" type="password" placeholder="password" pattern=".{3,}" maxlength="20"/>
 						<button type="button" onclick="submitLogin()">login</button>
 						<p class="message">Not registered? <a href="#">Create an account</a></p>
 					</form>
