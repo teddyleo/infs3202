@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+}
+
+html, body {
+	background-color: black;
+	color: white;
+	height: 100%;
+}
+.container {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer, .push {
+	text-align: center;
+	height: 4em;
+}
+
+.banner {
+	text-align: center;
+	max-width: 50%;
+	margin: auto;
+	padding-bottom: 4%;
+}
+
+.banner h1 {
+	padding-bottom: 2%;
+	color: white;
+	font-family: 'Droid Serif';
+	font-size: 30px;
+}
+
+.banner img {
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+.faqsect {
+	max-width: 720px;
+	margin: auto;
+}
+
+.shape {
+	width: 120px;
+	float: left;
+}
+
+.faqtable {
+	width:600px;
+	float: left;
+}
+
+.faqtable p {
+	font-family: "Roboto", sans-serif;
+	font-size: 13px;
+}
+
+.faqtable h3 {
+	font-family: 'Droid Serif';
+	font-size: 15px;
+}
+
+.faqtable td {
+	vertical-align: top;
+}
+
+.edges {
+	height: 140px;	
+}
+
+.inner {
+	height: 140px;
+}
+
+.negpadding {
+	position: relative;
+	right: 40px;
+}
+
+.clear {
+	clear: both;
+}
+
+.copyright p {
+    padding-top: 10px;
+	color: white;
+	text-decoration: none;
+	font-family: "Roboto", sans-serif;
+	font-size: 10px;
+}
