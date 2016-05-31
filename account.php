@@ -15,6 +15,7 @@
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif" />
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' defer></script>
 		<script src="js/account.js" defer></script>
+		<script src="js/dragndrop2.js"></script>
 	</head>
 	<body>
 		<div class="content">
@@ -64,7 +65,12 @@
 									<input type="text" id="newpass"><br>
 								</div>
 								<div class="clear"></div>
-								
+								<p id="unlock1">Please Unlock</p>
+								<div id="drag1">
+									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
+									<div id="lock" ondrop="drop(event, 'locked1', '#unlock1')" ondragover="allowDrop(event)"></div>
+									<div id="clear"></div>
+								</div>
 							</div>
 							<button type="button" class="btn" onclick="submitPassChange()">Save</button>
 						</form>
@@ -87,7 +93,12 @@
 									<input type="text" id="newemail"><br>
 								</div>
 								<div class="clear"></div>
-								
+								<p id="unlock2">Please Unlock</p>
+								<div id="drag2">
+									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
+									<div id="lock" ondrop="drop(event, 'locked2', '#unlock2')" ondragover="allowDrop(event)"></div>
+									<div id="clear"></div>
+								</div>
 							</div>
 							<button type="button" class="btn" onclick="submitEmailChange()">Save</button>
 						</form>

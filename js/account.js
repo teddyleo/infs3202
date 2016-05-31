@@ -1,5 +1,8 @@
+var locked1 = true;
+var locked2 = true;
+
 function submitPassChange() {
-	if(!$('#oldpass').val() || !$('#newpass').val()) {
+	if(!$('#oldpass').val() || !$('#newpass').val() || locked1) {
 		if(!$('#oldpass').val()) {
 			$('#oldpass').addClass('placecolor');
 			$('#oldpass').attr("placeholder", "Please enter old password");
@@ -8,11 +11,18 @@ function submitPassChange() {
 			$('#newpass').addClass('placecolor');
 			$('#newpass').attr("placeholder", "Please enter new password");
 		}
+		if(locked1){
+			$('#unlock1').css({'color':'red'});
+		}
+	} else {
+		resetDrag('drag1', '#unlock1');
+		$('#oldpass').val("");
+		$('#newpass').val("");
 	}
 }
 
 function submitEmailChange() {
-	if(!$('#oldemail').val() || !$('#newemail').val()) {
+	if(!$('#oldemail').val() || !$('#newemail').val() || locked2) {
 		if(!$('#oldemail').val()) {
 			$('#oldemail').addClass('placecolor');
 			$('#oldemail').attr("placeholder", "Please enter old address");
@@ -21,6 +31,13 @@ function submitEmailChange() {
 			$('#newemail').addClass('placecolor');
 			$('#newemail').attr("placeholder", "Please enter new address");
 		}
+		if(locked2){
+			$('#unlock2').css({'color':'red'});
+		}
+	} else {
+		resetDrag('drag2', '#unlock2');
+		$('#oldemail').val("");
+		$('#newemail').val("");
 	}
 }
 

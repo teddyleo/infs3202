@@ -315,6 +315,34 @@ html, body {
 	padding-bottom: 1%;
 }
 
+.forminput #drag1,
+.forminput #drag2 {
+	margin-top: 10px;
+}
+
+.forminput #unlock1,
+.forminput #unlock2 {
+	margin-top:10px;
+}
+
+.forminput #drag1 #clear,
+.forminput #drag2 #clear {
+	clear: both;
+}
+
+.forminput #key {
+	float:left;
+	width: 90px;
+	height: 39px;
+}
+
+.forminput #lock {
+	height: 39px;
+	width: 90px;
+	border: 1px white solid;
+	padding: 10px;
+	float: right;
+}
 
 .clear {
 	clear: both;
