@@ -353,3 +353,8 @@ body {
 	font-family: "Roboto", sans-serif;
 	font-size: 10px;
 }
+
+.copyright a {
+	color: white;
+	text-decoration: none;
+}

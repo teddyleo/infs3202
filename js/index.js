@@ -40,7 +40,7 @@ $("#loginbutton").click(function submitLogin() {
 						locked = true;
 					}
 				} else {
-					window.location.href = "home.html";
+					window.location.href = "home.php";
 				}
 			}
 		});
@@ -75,7 +75,7 @@ $("#createbutton").click(function submitRegister() {
 					$( ".errormessage" ).css( "display", "block" );
 				}
 				else {
-					window.location.href = "home.html";
+					window.location.href = "home.php";
 				}
 			}
 		});

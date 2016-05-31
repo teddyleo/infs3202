@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+	session_start();
+
+	if ($_SESSION["auth"] == false) {
+		header("location: index.php");
+		exit;
+}
+?>
 <html>
 	<head>
 		<title>Occhiolist - FAQ</title>
@@ -18,21 +26,21 @@
 				<div id="main" role="main">
 					<ul class="menu">
 						<li><a href="home.php">Home</a></li>
-						<li><a href="riddles.html">Riddles</a>
+						<li><a href="riddles.php">Riddles</a>
 							<ul class="submenu">
-								<li><a href="riddles.html">Proxy - 1</a></li>
-								<li><a href="riddles.html">Proxy - 2</a></li>
-								<li><a href="riddles.html">Proxy - 3</a></li>
-								<li><a href="riddles.html">Proxy - 4</a></li>
+								<li><a href="riddles.php">Proxy - 1</a></li>
+								<li><a href="riddles.php">Proxy - 2</a></li>
+								<li><a href="riddles.php">Proxy - 3</a></li>
+								<li><a href="riddles.php">Proxy - 4</a></li>
 							</ul>
 						</li>
-						<li class="active"><a href="FAQL.html">FAQ</a>
+						<li class="active"><a href="FAQL.php">FAQ</a>
 							<ul class="submenu">
-								<li><a href="FAQL.html">General</a></li>
+								<li><a href="FAQL.php">General</a></li>
 								<li><a>Answers</a></li>
 							</ul>
 						</li>
-						<li><a href="account.html">Account</a></li>
+						<li><a href="account.php">Account</a></li>
 					</ul>
 				</div>
 				<h1>Answers</h1>

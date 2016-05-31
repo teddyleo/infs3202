@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('PasswordHash.php');
 	$GLOBALS['mysqli'] = new mysqli('localhost', 'root', 'password', 'occhiolist');
 	if($GLOBALS['mysqli']->connect_errno > 0){
@@ -20,6 +21,7 @@
 				if ($storedHash) {
 					$check = $hasher->CheckPassword($pass, $storedHash[0]);
 					if ($check) {
+						$_SESSION["auth"] = true;
 						echo ('Pass');
 					} else {
 						echo ('Fail');
@@ -43,6 +45,7 @@
 						echo ('There was an error running the query [' . $GLOBALS['mysqli']->error . ']');
 					}
 					else {
+						$_SESSION["auth"] = true;
 						echo ('Pass');
 					}
 			} 

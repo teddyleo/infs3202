@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php 
+	session_start();
+	if(isset($_SESSION["auth"]) && $_SESSION["auth"] == true){
+		header("location: home.php");
+		exit;
+	}
+	$_SESSION["auth"] = false;
+?>
 <html>
 	<head>
 		<title>Occhiolist</title>
@@ -17,7 +25,6 @@
 			   to think outside the box.  Log in or Create an account below to begin <br>
 			   your journey into the web of riddles.
 			</p>
-			<?php echo "hello" ?>
 			<div class="login-page">
 			<div class="errormessage">The username or password you entered is incorrect. Please try again.</div>
 				<div class="form">
