@@ -52,27 +52,27 @@
 					<h2>Change account password</h2>
 					<hr>
 					<div class="passform">
-						<p>Use the form below to change your account password.  A confirmation <br>
+						<p id="passformp">Use the form below to change your account password.  A confirmation <br>
 						email will be sent before password change is in affect.</p>
 						<form class="passchange-form">
 							<div class="forminput">
 								<div class="floater">
 									Old password:
-									<input type="text" id="oldpass"><br>
+									<input type="password" id="oldpass" pattern=".{3,}" maxlength="20"><br>
 								</div>
 								<div class="floater">
 									New password:
-									<input type="text" id="newpass"><br>
+									<input type="password" id="newpass" pattern=".{3,}" maxlength="20"><br>
 								</div>
 								<div class="clear"></div>
-								<p id="unlock1">Please Unlock</p>
+								<p id="unlock1">Please verify you are human, drag the key into the box</p>
 								<div id="drag1">
 									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
 									<div id="lock" ondrop="drop(event, 'locked1', '#unlock1')" ondragover="allowDrop(event)"></div>
 									<div id="clear"></div>
 								</div>
 							</div>
-							<button type="button" class="btn" onclick="submitPassChange()">Save</button>
+							<button type="button" class="btn" id="newpassbtn">Save</button>
 						</form>
 					</div>
 				</div>
@@ -80,27 +80,27 @@
 					<h2>Change email address</h2>
 					<hr>
 					<div class="emailform">
-						<p>Use the form below to change your account password.  A confirmation <br>
+						<p id="emailformp">Use the form below to change your account password.  A confirmation <br>
 						email will be sent to the old address before the address change is in affect.</p>
 						<form class="emailchange-form">
 							<div class="forminput">
 								<div class="floater">
 									Old email address:
-									<input type="text" id="oldemail"><br>
+									<input type="text" id="oldemail" pattern=".{3,}" maxlength="254"><br>
 								</div>
 								<div class="floater">
 									New email address:
-									<input type="text" id="newemail"><br>
+									<input type="text" id="newemail" pattern=".{3,}" maxlength="254"><br>
 								</div>
 								<div class="clear"></div>
-								<p id="unlock2">Please Unlock</p>
+								<p id="unlock2">Please verify you are human, drag the key into the box</p>
 								<div id="drag2">
 									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
 									<div id="lock" ondrop="drop(event, 'locked2', '#unlock2')" ondragover="allowDrop(event)"></div>
 									<div id="clear"></div>
 								</div>
 							</div>
-							<button type="button" class="btn" onclick="submitEmailChange()">Save</button>
+							<button type="button" class="btn" id="newemailbtn">Save</button>
 						</form>
 					</div>
 				</div>

@@ -11,13 +11,13 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 	locked = false;
-	$('#unlock').html("Unlocked!");
+	$('#unlock').html("");
 }
 
 function resetDrag() {
 	var container = document.getElementById('drag');
 	container.innerHTML = save;
-	$('#unlock').html("Please Unlock");
+	$('#unlock').html("Please verify you are human, drag the key into the box");
 }
 
 var save;

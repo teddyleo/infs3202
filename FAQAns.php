@@ -66,10 +66,7 @@
 								<i id="down" class="fa fa-chevron-down" aria-hidden="true"></i>
 								<i id="up" class="fa fa-chevron-up" aria-hidden="true"></i>
 							</a><div id="clear"></div>
-							<p>The answer to the first riddle is as follows: Lorem ipsum dolor sit amet, 
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-							laboris nisi ut aliquip ex ea commodo consequat.
+							<p>The answers for Proxy 1 are not yet released.  They will be released soon.
 							</p>
 						</td>
 						</tr>
@@ -80,10 +77,7 @@
 								<i id="down" class="fa fa-chevron-down" aria-hidden="true"></i>
 								<i id="up" class="fa fa-chevron-up" aria-hidden="true"></i>
 							</a><div id="clear"></div>
-							<p>The answer to the second riddle is as follows: Lorem ipsum dolor sit amet, 
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-							laboris nisi ut aliquip ex ea commodo consequat.
+							<p>Proxy 2 has not been released yet, therefore there are no answers available.
 							</p>
 						</td>
 						</tr>
@@ -94,10 +88,7 @@
 								<i id="down" class="fa fa-chevron-down" aria-hidden="true"></i>
 								<i id="up" class="fa fa-chevron-up" aria-hidden="true"></i>
 							</a><div id="clear"></div>
-							<p>The answer to the third riddle is as follows: Lorem ipsum dolor sit amet, 
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-							laboris nisi ut aliquip ex ea commodo consequat.
+							<p>Proxy 3 has not been released yet, therefore there are no answers available.
 							</p>
 						</td>	
 						</tr>
@@ -108,10 +99,7 @@
 								<i id="down" class="fa fa-chevron-down" aria-hidden="true"></i>
 								<i id="up" class="fa fa-chevron-up" aria-hidden="true"></i>
 							</a><div id="clear"></div>
-							<p>The answer to the fourth riddle is as follows: Lorem ipsum dolor sit amet, 
-							consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et 
-							dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-							laboris nisi ut aliquip ex ea commodo consequat.
+							<p>Proxy 4 has not been released yet, therefore there are no answers available.
 							</p>
 						</td>
 						</tr>
