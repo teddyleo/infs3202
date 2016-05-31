@@ -7,6 +7,12 @@ html, body {
 	color: white;
 	height: 100%;
 }
+
+body {
+	min-width: 730px;
+	width: auto !important;
+}
+
 .content{
 	min-height: 100%;
 	height: auto !important;
@@ -232,7 +238,7 @@ html, body {
 
 .banner {
 	text-align: center;
-	max-width: 50%;
+	max-width: 704px;
 	margin: auto;
 	padding-bottom: 4%;
 }
@@ -257,12 +263,14 @@ html, body {
 .shape {
 	width: 120px;
 	float: left;
+	margin-left:40px;
 }
 
 .faqtable {
 	padding-top: 20px;
-	width:600px;
+	width:540px;
 	float: left;
+	padding-right: 20px;
 }
 
 .faqtable p {

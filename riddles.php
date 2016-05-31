@@ -22,9 +22,8 @@
 				<div class="logo">
 					<img src="img/occhiolistlogo.png" alt="Occhiolist Logo" height="100" width="270">
 				</div>
-				<div class="container" id="main" role="main">
+				<div id="main" role="main">
 					<ul class="menu">
-						<li></li>
 						<li><a href="home.php">Home</a></li>
 						<li><a>Riddles</a>
 							<ul class="submenu">
@@ -46,7 +45,6 @@
 				<h1>Riddles</h1>
 				<hr>
 			</div>
-			<div class="push"></div>
 		</div>
 		<div class="footer">
 			<div class="copyright">
