@@ -41,6 +41,18 @@ function submitEmailChange() {
 	}
 }
 
+function show() {
+	$('#down').hide('fast');
+	$('#up').show('fast');
+	$('#hide').show('fast');
+}
+
+function hide() {
+	$('#up').hide('fast');
+	$('#hide').hide('fast');
+	$('#down').show('fast');
+}
+
 $('.passchange-form input').focus(function(){
    $('.passchange-form input').removeClass('placecolor');
 });

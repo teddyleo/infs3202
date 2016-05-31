@@ -13,6 +13,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/account.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+		<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' defer></script>
 		<script src="js/account.js" defer></script>
 		<script src="js/dragndrop2.js"></script>
@@ -79,7 +80,9 @@
 				<div class="email-change">
 					<h2>Change email address</h2>
 					<hr>
-					<div class="emailform">
+					<i class="fa fa-chevron-right" aria-hidden="true" id="down" onclick="show()"></i>
+					<i class="fa fa-chevron-left" aria-hidden="true" id="up" onclick="hide()"></i>
+					<div class="emailform" id="hide">
 						<p>Use the form below to change your account password.  A confirmation <br>
 						email will be sent to the old address before the address change is in affect.</p>
 						<form class="emailchange-form">

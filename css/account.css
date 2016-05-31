@@ -344,6 +344,30 @@ html, body {
 	float: right;
 }
 
+.emailform {
+	padding-bottom: 20px;
+}
+
+#down, #up {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	color: white;
+	width: 30px;
+	margin: auto;
+	font-size: 30px;
+}
+
+#down:hover,
+#up:hover {
+	color: #cccccc;
+	cursor: pointer;
+}
+
+
+#up, #hide {
+	display: none;
+}
+
 .clear {
 	clear: both;
 }
