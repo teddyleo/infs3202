@@ -2,11 +2,11 @@ $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
 
-function submitLogin() {
-	if(!$('#email').val() || !$('#pass').val()) {
-		if(!$('#email').val()) {
-			$('#email').addClass('placecolor');
-			$('#email').attr("placeholder", "Please enter an email");
+$("#loginbutton").click(function submitLogin() {
+	if(!$('#name').val() || !$('#pass').val()) {
+		if(!$('#name').val()) {
+			$('#name').addClass('placecolor');
+			$('#name').attr("placeholder", "Please enter an username");
 			
 		}
 		if(!$('#pass').val()) {
@@ -15,15 +15,30 @@ function submitLogin() {
 		}
 	}
 	else {
-		$('.login-form').submit();
+		$.ajax({
+			type: 'POST', 
+			url: 'php/account.php', 
+			data: { name: $('#name').val(), pass: $('#pass').val(), action: "login"},
+			success: function (x) {                
+				if(x != "Pass") {
+					$( ".container p" ).css( "padding-bottom", "20px" );
+					$( ".errormessage" ).text("Username or Password you entered is invalid.  Please try again.");
+					$( ".errormessage" ).css( "display", "block" );
+				}
+				else {
+					window.location.href = "home.html";
+				}
+			}
+		});
 	}
-}
+	return false;
+});
 
-function submitRegister() {
+$("#createbutton").click(function submitRegister() {
 	if(!$('#namereg').val() || !$('#passreg').val() || !$('#emailreg').val()) {
 		if(!$('#namereg').val()) {
 			$('#namereg').addClass('placecolor');
-			$('#namereg').attr("placeholder", "Please enter a name");
+			$('#namereg').attr("placeholder", "Please enter a username");
 		}
 		if(!$('#passreg').val()) {
 			$('#passreg').addClass('placecolor');
@@ -35,9 +50,24 @@ function submitRegister() {
 		}
 	}
 	else {
-		$('.register-form').submit();
+		$.ajax({
+			type: 'POST', 
+			url: 'php/account.php', 
+			data: { email: $('#emailreg').val(), pass: $('#passreg').val(), name: $('#namereg').val(), action: "create"},
+			success: function (x) {                
+				if(x != "Pass") {
+					$( ".container p" ).css( "padding-bottom", "20px" );
+					$( ".errormessage" ).text(x);
+					$( ".errormessage" ).css( "display", "block" );
+				}
+				else {
+					window.location.href = "home.html";
+				}
+			}
+		});
 	}
-}
+	return false;
+});
 
 $('.register-form input').focus(function(){
    $('.register-form input').removeClass('placecolor');

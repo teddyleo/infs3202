@@ -17,20 +17,22 @@
 			   your journey into the web of riddles.
 			</p>
 			<div class="login-page">
+			<div class="errormessage">The username or password you entered is incorrect. Please try again.</div>
 				<div class="form">
-					<form class="register-form" action="home.html">
-						<input id="namereg" type="text" placeholder="name" pattern=".{3,}" maxlength="20"/>
+					<form class="register-form">
+						<input id="namereg" type="text" placeholder="username" pattern=".{3,}" maxlength="20"/>
 						<input id="passreg" type="password" placeholder="password" pattern=".{3,}" maxlength="20"/>
 						<input id="emailreg" type="text" placeholder="email address" pattern=".{3,}" maxlength="254"/>
-						<button type="button" onclick="submitRegister()">create</button>
+						<button type="submit" id="createbutton">create</button>
 						<p class="message">Already registered? <a href="#">Sign In</a></p>
 					</form>
-					<form class="login-form" action="home.html">
-						<input id="email" type="text" placeholder="email address" pattern=".{3,}" maxlength="254"/>
+					<form class="login-form">
+						<input id="name" type="text" placeholder="username" pattern=".{3,}" maxlength="20"/>
 						<input id="pass" type="password" placeholder="password" pattern=".{3,}" maxlength="20"/>
-						<button type="button" onclick="submitLogin()">login</button>
+						<button type="submit" id="loginbutton">login</button>
 						<p class="message">Not registered? <a href="#">Create an account</a></p>
 					</form>
+					
 				</div>
 			</div>
 			<div class="push"></div>
