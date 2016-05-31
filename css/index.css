@@ -102,6 +102,33 @@ html, body {
 	display: none;
 }
 
+.form #drag {
+	display: none;
+	margin-bottom: 20px;
+}
+
+.form #unlock {
+	display: none;
+}
+
+.form #drag #clear {
+	clear: both;
+}
+
+.form #key {
+	float:left;
+	width: 90px;
+	height: 39px;
+}
+
+.form #lock {
+	height: 39px;
+	width: 90px;
+	border: 1px white solid;
+	padding: 10px;
+	float: right;
+}
+
 .placecolor::-webkit-input-placeholder {
     color:    red;
 }

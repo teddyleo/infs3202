@@ -1,3 +1,7 @@
+var failedTries = 0;
+var locked = false;
+var failCount = 0;
+
 $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
 });
@@ -20,12 +24,22 @@ $("#loginbutton").click(function submitLogin() {
 			url: 'php/account.php', 
 			data: { name: $('#name').val(), pass: $('#pass').val(), action: "login"},
 			success: function (x) {                
-				if(x != "Pass") {
+				if(x != "Pass" || locked) {
 					$( ".container p" ).css( "padding-bottom", "20px" );
+					failedTries++;
+					if(failedTries == 5){
+						locked = true;
+						failCount += 1;
+						$('#drag').show('fast');
+						$('#unlock').show('fast');
+					}
 					$( ".errormessage" ).text("Username or Password you entered is invalid.  Please try again.");
 					$( ".errormessage" ).css( "display", "block" );
-				}
-				else {
+					if(!locked && failCount > 0){
+						resetDrag();
+						locked = true;
+					}
+				} else {
 					window.location.href = "home.html";
 				}
 			}
