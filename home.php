@@ -47,7 +47,15 @@ $_SESSION["riddle1"] = 0;
 						<li><a href="account.php">Account</a></li>
 					</ul>
 				</div>
-			<div class="push"></div>
+			<!--<div class="push"></div>-->
+			<div  class="welcome">
+			<h1>Welcome</h1>
+				<p>Welcome to Occhiolist, The website that tests your knowledge and 
+				understanding of both mental logic and computer skills. Occhiolist provides 
+				users with challenges in the form of web riddles.
+				So come test your knowledge against the Occhiolist!
+				</p>
+			</div>
 		</div>
         <div class="footer">
             <div class="copyright">

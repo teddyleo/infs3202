@@ -271,3 +271,79 @@ body {
 	color: white;
 	text-decoration: none;
 }
+
+/*Riddle boxes*/
+.riddlesContainer {
+	width: 50%;
+	height: 500px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+/*Riddle Boxes animations*/
+ul.img-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+ul.img-list li {
+	display: inline-block;
+	height: 180px;
+	margin: 0 1em 1em 0;
+	position: relative;
+	width: 260px;
+}
+
+span.text-content {
+	background: rgba(0,0,0,0.5);
+	color: white;
+	cursor: pointer;
+	display: table;
+	height: 180px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 260px;
+}
+
+span.text-content span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+span.text-content {
+	background: rgba(0,0,0,0.5);
+	color: white;
+	cursor: pointer;
+	display: table;
+	height: 180px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 260px;
+	opacity: 0;
+}
+
+ul.img-list li:hover span.text-content {
+	opacity: 1;
+}
+
+span.text-content {
+	background: rgba(0,0,0,0.5);
+	color: white;
+	cursor: pointer;
+	display: table;
+	height: 180px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 260px;
+	opacity: 0;
+	-webkit-transition: opacity 500ms;
+	-moz-transition: opacity 500ms;
+	-o-transition: opacity 500ms;
+	transition: opacity 500ms;
+}

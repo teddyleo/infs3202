@@ -45,6 +45,31 @@
 				<h1>Riddles</h1>
 				<hr>
 			</div>
+			
+			<section class="riddlesContainer">
+				<ul class="img-list">
+					<li>
+						<img src="img/riddle1.jpg" width="260" height="180" />
+						<span class="text-content"><span>Proxy - 1</span></span>
+					</li>
+					<li>
+						<img src="img/riddle2.jpg" width="260" height="180" />
+						<span class="text-content"><span>Proxy - 2</span></span>
+					</li>
+				</ul>
+				<ul class="img-list">
+					<li>
+						<img src="img/riddle3.jpg" width="260" height="180" />
+						<span class="text-content"><span>Proxy - 3</span></span>
+						</a>
+					</li>
+					<li>
+						<img src="img/riddle4.jpg" width="260" height="180" />
+						<span class="text-content"><span>Proxy - 4</span></span>
+						</a>
+					</li>
+				</ul>
+			</section>
 		</div>
 		<div class="footer">
 			<div class="copyright">
