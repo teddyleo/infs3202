@@ -6,15 +6,17 @@
 		die('Unable to connect to database [' . $GLOBALS['mysqli']->connect_error . ']');
 	}
 	
-	switch ($_POST["action"]) {	
+	$json = json_decode(file_get_contents('php://input'), true);
+	
+	switch ($json["action"]) {	
 		case "login":
-			$name = $_POST["name"];
-			$pass = $_POST["pass"];
+			$name = $json["name"];
+			$pass = $json["pass"];
 			$hasher = new PasswordHash(8, false);
 			$sql = "SELECT `hash_encoding` FROM `user_authentication` WHERE `name` = '" . $name . "'";
 					
 			if(!$result = $GLOBALS['mysqli']->query($sql)){
-				echo ('There was an error running the query [' . $GLOBALS['mysqli']->error . ']');
+				echo (json_encode('There was an error running the query [' . $GLOBALS['mysqli']->error . ']'));
 			}
 			else {
 				$storedHash = $result->fetch_array();
@@ -22,35 +24,35 @@
 					$check = $hasher->CheckPassword($pass, $storedHash[0]);
 					if ($check) {
 						$_SESSION["auth"] = true;
-						echo ('Pass');
+						echo (json_encode('Pass'));
 					} else {
-						echo ('Fail');
+						echo (json_encode('Fail'));
 					}
 				}
 				else {
-					echo ('Fail');
+					echo (json_encode('Fail'));
 				}
 			} 
 			break;
 			
 		case "create":
-			$name = $_POST["name"];
-			$pass = $_POST["pass"];
-			$email = $_POST["email"];
+			$name = $json["name"];
+			$pass = $json["pass"];
+			$email = $json["email"];
 			$hasher = new PasswordHash(8, false);
 			$hash = $hasher->HashPassword($pass);	
 			if (strlen($hash) >= 20) {
 					$sql = "INSERT INTO `user_authentication`(`email_address`, `name`, `hash_encoding`) VALUES ('" . $email . "','" . $name . "','" . $hash . "')";
 					if(!$result = $GLOBALS['mysqli']->query($sql)){
-						echo ('There was an error running the query [' . $GLOBALS['mysqli']->error . ']');
+						echo (json_encode('There was an error running the query [' . $GLOBALS['mysqli']->error . ']'));
 					}
 					else {
 						$_SESSION["auth"] = true;
-						echo ('Pass');
+						echo (json_encode('Pass'));
 					}
 			} 
 			else {
-				echo ('Fail');
+				echo (json_encode('Fail'));
 			}
 			break;
 	}

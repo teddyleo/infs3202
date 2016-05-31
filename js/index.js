@@ -21,9 +21,10 @@ $("#loginbutton").click(function submitLogin() {
 	else {
 		$.ajax({
 			type: 'POST', 
-			url: 'php/account.php', 
-			data: { name: $('#name').val(), pass: $('#pass').val(), action: "login"},
-			success: function (x) {                
+			url: 'php/account.php',
+			dataType: 'json',
+			data: JSON.stringify( {"name": $('#name').val(), "pass": $('#pass').val(), "action": "login"}),
+			success: function (x) {
 				if(x != "Pass" || locked) {
 					$( ".container p" ).css( "padding-bottom", "20px" );
 					failedTries++;
@@ -33,7 +34,7 @@ $("#loginbutton").click(function submitLogin() {
 						$('#drag').show('fast');
 						$('#unlock').show('fast');
 					}
-					$( ".errormessage" ).text("Username or Password you entered is invalid.  Please try again.");
+					$( ".errormessage" ).text("The username or password you entered is incorrect. Please try again.");
 					$( ".errormessage" ).css( "display", "block" );
 					if(!locked && failCount > 0){
 						resetDrag();
@@ -66,8 +67,9 @@ $("#createbutton").click(function submitRegister() {
 	else {
 		$.ajax({
 			type: 'POST', 
-			url: 'php/account.php', 
-			data: { email: $('#emailreg').val(), pass: $('#passreg').val(), name: $('#namereg').val(), action: "create"},
+			url: 'php/account.php',
+			dataType: 'json',
+			data: JSON.stringify({ "email": $('#emailreg').val(), "pass": $('#passreg').val(), "name": $('#namereg').val(), "action": "create"}),
 			success: function (x) {                
 				if(x != "Pass") {
 					$( ".container p" ).css( "padding-bottom", "20px" );
