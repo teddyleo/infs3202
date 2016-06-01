@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	require_once('PasswordHash.php');
-	$GLOBALS['mysqli'] = new mysqli('localhost', 'root', 'password', 'occhiolist');
+	$GLOBALS['mysqli'] = new mysqli('us-cdbr-azure-west-c.cloudapp.net', 'baa9009b8cacca', '304c8562', 'occhiolistDB');
 	if($GLOBALS['mysqli']->connect_errno > 0){
 		die('Unable to connect to database [' . $GLOBALS['mysqli']->connect_error . ']');
 	}
