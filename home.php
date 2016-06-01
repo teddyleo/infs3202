@@ -49,7 +49,7 @@ $_SESSION["riddle1"] = 0;
 				</div>
 			<!--<div class="push"></div>-->
 			<div  class="welcome">
-			<h1>Welcome</h1>
+			<h1>Welcome, <?php echo $_SESSION["user_name"]?></h1>
 				<p>Welcome to Occhiolist, The website that tests your knowledge and 
 				understanding of both mental logic and computer skills. Occhiolist provides 
 				users with challenges in the form of web riddles.
