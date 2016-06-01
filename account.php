@@ -52,7 +52,8 @@
 				<div class="pass-change">
 					<h2>Change account password</h2>
 					<hr>
-					<div class="passform">
+					<i class="fa fa-chevron-right" aria-hidden="true" id="up" onclick="hideDiv()"></i>
+					<div class="passform" id="show">
 						<p>Use the form below to change your account password.  A confirmation <br>
 						email will be sent before password change is in affect.</p>
 						<form class="passchange-form">
@@ -66,8 +67,8 @@
 									<input type="text" id="newpass"><br>
 								</div>
 								<div class="clear"></div>
-								<p id="unlock1">Please Unlock</p>
 								<div id="drag1">
+									<p id="unlock1">Please Unlock</p>
 									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
 									<div id="lock" ondrop="drop(event, 'locked1', '#unlock1')" ondragover="allowDrop(event)"></div>
 									<div id="clear"></div>
@@ -80,8 +81,7 @@
 				<div class="email-change">
 					<h2>Change email address</h2>
 					<hr>
-					<i class="fa fa-chevron-right" aria-hidden="true" id="down" onclick="show()"></i>
-					<i class="fa fa-chevron-left" aria-hidden="true" id="up" onclick="hide()"></i>
+					<i class="fa fa-chevron-right" aria-hidden="true" id="down" onclick="showDiv()"></i>
 					<div class="emailform" id="hide">
 						<p>Use the form below to change your account password.  A confirmation <br>
 						email will be sent to the old address before the address change is in affect.</p>
@@ -96,11 +96,8 @@
 									<input type="text" id="newemail"><br>
 								</div>
 								<div class="clear"></div>
-								<p id="unlock2">Please Unlock</p>
 								<div id="drag2">
-									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
-									<div id="lock" ondrop="drop(event, 'locked2', '#unlock2')" ondragover="allowDrop(event)"></div>
-									<div id="clear"></div>
+									
 								</div>
 							</div>
 							<button type="button" class="btn" onclick="submitEmailChange()">Save</button>

@@ -322,7 +322,7 @@ html, body {
 
 .forminput #unlock1,
 .forminput #unlock2 {
-	margin-top:10px;
+	margin-bottom: 15px;
 }
 
 .forminput #drag1 #clear,

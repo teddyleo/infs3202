@@ -25,7 +25,7 @@ function resetDrag(drag, unlock) {
 		locked1 = true;
 	}
 	if(unlock == "#unlock2"){
-		container.innerHTML = save2;
+		container.innerHTML = save1;
 		locked2 = true;
 	}
 	$(unlock).html("Please Unlock");
