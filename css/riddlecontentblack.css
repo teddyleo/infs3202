@@ -1,0 +1,56 @@
+/* ============================================================================================== 
+This copyright notice must be kept untouched in the stylesheet at all times.
+The original version of this stylesheet and the associated (x)html 
+is available at http://www.script-tutorials.com/whirling-dropdown-menu/
+Copyright (c) Script Tutorials. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any way to fit your requirements.
+================================================================================================= */
+
+* {
+    margin: 0;
+}
+html, body {
+    background-color: black;
+	height: 100%;
+}
+
+.content {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -4em;
+}
+
+.footer, .push {
+	text-align: center;
+	height: 4em;
+}
+
+.copyright a {
+    padding-top: 10px;
+	color: white;
+	text-decoration: none;
+	font-family: "Roboto", sans-serif;
+	font-size: 10px;
+}
+
+.riddle {
+	width: 400px;
+	text-align:center;
+	margin: auto;
+	padding-top: 200px;
+}
+
+p {
+	color: white;
+	text-decoration: none;
+	font-family: "Roboto", sans-serif;
+	font-size: 15px;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	padding-bottom: 2%;
+	font-family: 'Droid Serif' !important;
+}
