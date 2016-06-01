@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-
+<?php
+	session_start();
+?>
 <html>
 	<head>
 		<title>Occhiolist - Layer 0 - itssodark</title>
@@ -25,6 +27,14 @@
 		</div>
         <div class="footer">
             <div class="copyright">
+				<p>Progress: <?php echo $_SESSION["riddle1_progress"]/2*100 ?>%</p>
+				<?php
+					if($_SESSION["riddle1_progress"] > 0){
+						?><a href="itssodark.php"><p>Skip</p></a><?php
+					}
+				?>
+				<a href="home.php"><p>Home</p></a>
+				<div id="clear"></div>
 				<a id="help" href="" onClick="displayHelp()">Help</a>
 			</div>
         </div>

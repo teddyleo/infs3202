@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-
+<?php
+	session_start();
+	
+	if($_SESSION["riddle1_progress"] < 2){
+		$_SESSION["riddle1_progress"] = 2;
+		$GLOBALS['mysqli3'] = new mysqli('localhost', 'root', 'password', 'occhiolist');
+		$sql = "UPDATE user_progress SET riddle1_progress='2' WHERE user_id='" . $_SESSION["user_id"] . "'";
+		if(!$result = $GLOBALS['mysqli3']->query($sql)){
+			echo (json_encode('There was an error running the query [' . $GLOBALS['mysqli']->error . ']'));
+		}
+	}
+?>
 <html>
 	<head>
 		<title>Occhiolist - Success</title>
@@ -21,7 +32,7 @@
 		</div>
         <div class="footer">
             <div class="copyright">
-				
+				<p>Progress: <?php echo ($_SESSION["riddle1_progress"]/2*100)?>%</p>
 			</div>
         </div>
 	</body>

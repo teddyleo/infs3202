@@ -27,7 +27,7 @@
 						<li><a href="home.php">Home</a></li>
 						<li><a>Riddles</a>
 							<ul class="submenu">
-								<li><a href="riddles.php">Proxy - 1</a></li>
+								<li><a href="whereami.php">Proxy - 1</a></li>
 								<li><a href="riddles.php">Proxy - 2</a></li>
 								<li><a href="riddles.php">Proxy - 3</a></li>
 								<li><a href="riddles.php">Proxy - 4</a></li>
@@ -48,10 +48,22 @@
 			
 			<section class="riddlesContainer">
 				<ul class="img-list">
-					<li>
+					<a href="whereami.php"><li>
 						<img src="img/riddle1.jpg" width="260" height="180" />
-						<span class="text-content"><span>Proxy - 1</span></span>
+						<span class="text-content">
+							<span>Proxy - 1
+							<?php
+								if($_SESSION["riddle1_progress"] > 0){
+									?>
+									<br>
+									Progress: <?php echo $_SESSION["riddle1_progress"]/2*100?>%
+									<?php
+								}
+							?>
+							</span>
+						</span>
 					</li>
+					</a>
 					<li>
 						<img src="img/riddle2.jpg" width="260" height="180" />
 						<span class="text-content"><span>Proxy - 2</span></span>

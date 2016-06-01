@@ -32,10 +32,10 @@ $_SESSION["riddle1"] = 0;
 						<li><a>Home</a></li>
 						<li><a href="riddles.php">Riddles</a>
 							<ul class="submenu">
-								<li><a href="riddles.html">Proxy - 1</a></li>
-								<li><a href="riddles.html">Proxy - 2</a></li>
-								<li><a href="riddles.html">Proxy - 3</a></li>
-								<li><a href="riddles.html">Proxy - 4</a></li>
+								<li><a href="whereami.php">Proxy - 1</a></li>
+								<li><a href="riddles.php">Proxy - 2</a></li>
+								<li><a href="riddles.php">Proxy - 3</a></li>
+								<li><a href="riddles.php">Proxy - 4</a></li>
 							</ul>
 						</li>
 						<li class="active"><a href="FAQL.php">FAQ</a>
@@ -49,7 +49,7 @@ $_SESSION["riddle1"] = 0;
 				</div>
 			<!--<div class="push"></div>-->
 			<div  class="welcome">
-			<h1>Welcome</h1>
+			<h1>Welcome, <?php echo $_SESSION["name"]?></h1>
 				<p>Welcome to Occhiolist, The website that tests your knowledge and 
 				understanding of both mental logic and computer skills. Occhiolist provides 
 				users with challenges in the form of web riddles.

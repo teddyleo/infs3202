@@ -2,6 +2,11 @@
 	session_start();
 	require_once('PasswordHash.php');
 	$GLOBALS['mysqli'] = new mysqli('us-cdbr-azure-west-c.cloudapp.net', 'baa9009b8cacca', '304c8562', 'occhiolistDB');
+	$GLOBALS['mysqli2'] = new mysqli('us-cdbr-azure-west-c.cloudapp.net', 'baa9009b8cacca', '304c8562', 'occhiolistDB');
+	$GLOBALS['mysqli3'] = new mysqli('us-cdbr-azure-west-c.cloudapp.net', 'baa9009b8cacca', '304c8562', 'occhiolistDB');
+	/* $GLOBALS['mysqli'] = new mysqli('localhost', 'root', 'password', 'occhiolist');
+	$GLOBALS['mysqli2'] = new mysqli('localhost', 'root', 'password', 'occhiolist');
+	$GLOBALS['mysqli3'] = new mysqli('localhost', 'root', 'password', 'occhiolist'); */
 	if($GLOBALS['mysqli']->connect_errno > 0){
 		die('Unable to connect to database [' . $GLOBALS['mysqli']->connect_error . ']');
 	}
@@ -11,6 +16,7 @@
 	switch ($json["action"]) {	
 		case "login":
 			$name = $json["name"];
+			$name2 = $json["name"];
 			$pass = $json["pass"];
 			$hasher = new PasswordHash(8, false);
 			
@@ -26,6 +32,24 @@
 				if ($storedHash) {
 					$check = $hasher->CheckPassword($pass, $storedHash);
 					if ($check) {
+						$email = '';
+						$stmt2 = $GLOBALS['mysqli2']->prepare("SELECT `email_address` FROM `user_authentication` WHERE `name` = ?");
+						$stmt2->bind_param("s", $name2);
+						if(!$result = $stmt2->execute()){
+							echo (json_encode('There was an error running the query [' . $GLOBALS['mysqli2']->error . ']'));
+						} else {
+							$stmt2->bind_result($email);
+							$stmt2->fetch();
+							$_SESSION["user_id"] = $email;
+						}
+						
+						$sql3 = "SELECT `riddle1_progress` FROM `user_progress` WHERE `user_id` = '" . $_SESSION["user_id"] . "'";
+						if(!$result3 = $GLOBALS['mysqli3']->query($sql3)){
+							echo (json_encode('There was an error running the query [' . $GLOBALS['mysqli3']->error . ']'));
+						}
+						$progress = $result3->fetch_array();
+						$_SESSION["riddle1_progress"] = $progress[0];
+						
 						$_SESSION["auth"] = true;
 						$_SESSION["name"] = $name;
 						echo (json_encode('Pass'));
@@ -37,6 +61,7 @@
 					echo (json_encode('Fail'));
 				}
 			} 
+			
 			break;
 			
 		case "changeemail":
@@ -127,6 +152,13 @@
 						}
 					}
 					else {
+						$sql2 = "INSERT INTO `user_progress` (`user_id`, `riddle1_progress`) VALUES ('" . $email . "', '0')";
+						if(!$result2 = $GLOBALS['mysqli']->query($sql2)){
+							echo (json_encode('There was an error running the query [' . $GLOBALS['mysqli']->error . ']'));
+						}
+						$_SESSION["user_id"] = $email;
+						$_SESSION["name"] = $name;
+						$_SESSION["riddle1_progress"] = 0;
 						$_SESSION["auth"] = true;
 						echo (json_encode('Pass'));
 					}
