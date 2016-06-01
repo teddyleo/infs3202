@@ -13,6 +13,7 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="css/account.css">
 		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif" />
+		<link rel="stylesheet" href="css/font-awesome-4.6.3/css/font-awesome.min.css">
 		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' defer></script>
 		<script src="js/account.js" defer></script>
 		<script src="js/dragndrop2.js"></script>
@@ -51,7 +52,8 @@
 				<div class="pass-change">
 					<h2>Change account password</h2>
 					<hr>
-					<div class="passform">
+					<i class="fa fa-chevron-right" aria-hidden="true" id="up" onclick="hideDiv()"></i>
+					<div class="passform" id="show">
 						<p id="passformp">Use the form below to change your account password.  A confirmation <br>
 						email will be sent before password change is in affect.</p>
 						<form class="passchange-form">
@@ -65,8 +67,8 @@
 									<input type="password" id="newpass" pattern=".{3,}" maxlength="20"><br>
 								</div>
 								<div class="clear"></div>
-								<p id="unlock1">Please verify you are human, drag the key into the box</p>
 								<div id="drag1">
+									<p id="unlock1">Please verify you are human, drag the key into the box</p>
 									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
 									<div id="lock" ondrop="drop(event, 'locked1', '#unlock1')" ondragover="allowDrop(event)"></div>
 									<div id="clear"></div>
@@ -79,7 +81,8 @@
 				<div class="email-change">
 					<h2>Change email address</h2>
 					<hr>
-					<div class="emailform">
+					<i class="fa fa-chevron-right" aria-hidden="true" id="down" onclick="showDiv()"></i>
+					<div class="emailform" id="hide">
 						<p id="emailformp">Use the form below to change your account password.  A confirmation <br>
 						email will be sent to the old address before the address change is in affect.</p>
 						<form class="emailchange-form">
@@ -93,11 +96,8 @@
 									<input type="text" id="newemail" pattern=".{3,}" maxlength="254"><br>
 								</div>
 								<div class="clear"></div>
-								<p id="unlock2">Please verify you are human, drag the key into the box</p>
 								<div id="drag2">
-									<img id="key" src="img/occhiolistlogo.png" draggable="true" ondragstart="drag(event)">
-									<div id="lock" ondrop="drop(event, 'locked2', '#unlock2')" ondragover="allowDrop(event)"></div>
-									<div id="clear"></div>
+								
 								</div>
 							</div>
 							<button type="button" class="btn" id="newemailbtn">Save</button>

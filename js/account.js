@@ -45,8 +45,8 @@ $("#newemailbtn").click(function submitEmailChange() {
 			$('#newemail').addClass('placecolor');
 			$('#newemail').attr("placeholder", "Please enter new address");
 		}
-		if(locked2){
-			$('#unlock2').css({'color':'red'});
+		if(locked1){
+			$('#unlock1').css({'color':'red'});
 		}
 	} else {
 		$.ajax({
@@ -62,7 +62,7 @@ $("#newemailbtn").click(function submitEmailChange() {
 					$('#emailformp').text(x);
 				}
 				else {
-					resetDrag('drag2', '#unlock2');
+					resetDrag('drag2', '#unlock1');
 					$('#oldemail').val("");
 					$('#newemail').val("");
 					$('#emailformp').text("Email Successfully Changed");
@@ -72,6 +72,34 @@ $("#newemailbtn").click(function submitEmailChange() {
 	}
 	return false;
 });
+
+function showDiv() {
+	$('#down').hide('fast');
+	$('#show').hide('fast');
+	$('#up').show('fast');
+	$('#hide').show('fast');
+	var save = document.getElementById('drag1').innerHTML;
+	document.getElementById('drag2').innerHTML = save;
+	document.getElementById('drag1').innerHTML = "";
+	resetDrag('drag2', '#unlock2');
+	$('#oldemail').val("");
+	$('#newemail').val("");
+	$('.emailchange-form input').removeClass('placecolor');
+}
+
+function hideDiv() {
+	$('#up').hide('fast');
+	$('#hide').hide('fast');
+	$('#down').show('fast');
+	$('#show').show('fast');
+	var save = document.getElementById('drag2').innerHTML;
+	document.getElementById('drag1').innerHTML = save;
+	document.getElementById('drag2').innerHTML = "";
+	resetDrag('drag1', '#unlock1');
+	$('#oldpass').val("");
+	$('#newpass').val("");
+	$('.passchange-form input').removeClass('placecolor');
+}
 
 $('.passchange-form input').focus(function(){
    $('.passchange-form input').removeClass('placecolor');
