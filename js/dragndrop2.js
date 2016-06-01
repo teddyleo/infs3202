@@ -14,7 +14,7 @@ function drop(ev, lock, unlock) {
 		locked1 = false;
 	if(lock == 'locked2')
 		locked2 = false;
-	$(unlock).html("Unlocked!");
+	$(unlock).html("");
 	$(unlock).css({'color':'white'});
 }
 
@@ -25,10 +25,10 @@ function resetDrag(drag, unlock) {
 		locked1 = true;
 	}
 	if(unlock == "#unlock2"){
-		container.innerHTML = save1;
+		container.innerHTML = save2;
 		locked2 = true;
 	}
-	$(unlock).html("Please Unlock");
+	$(unlock).html("Please verify you are human, drag the key into the box");
 }
 
 var save1;

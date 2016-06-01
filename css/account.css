@@ -322,7 +322,7 @@ html, body {
 
 .forminput #unlock1,
 .forminput #unlock2 {
-	margin-bottom: 15px;
+	margin-top:10px;
 }
 
 .forminput #drag1 #clear,
@@ -342,30 +342,6 @@ html, body {
 	border: 1px white solid;
 	padding: 10px;
 	float: right;
-}
-
-.emailform {
-	padding-bottom: 20px;
-}
-
-#down, #up {
-	padding-top: 10px;
-	padding-bottom: 20px;
-	color: white;
-	width: 30px;
-	margin: auto;
-	font-size: 30px;
-}
-
-#down:hover,
-#up:hover {
-	color: #cccccc;
-	cursor: pointer;
-}
-
-
-#up, #hide {
-	display: none;
 }
 
 .clear {
